@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O nás — Sci-Fi Portal</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav>
+    <div class="logo"><span>[</span>VOID<span>]</span></div>
+    <ul>
+        <li><a href="../index.html">Domov</a></li>
+        <li><a href="filmy.html">Filmy</a></li>
+        <li><a href="serialy.html">Seriály</a></li>
+        <li><a href="galeria.html">Galéria</a></li>
+        <li><a href="rebricek.html">Rebríček</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+</nav>
+
+<div class="obsah">
+
+    <h2 class="nadpis-sekcie">Napíš nám</h2>
+
+    <div class="formular" style="max-width: 500px;">
+        <label for="meno">Meno</label>
+        <input type="text" id="meno" placeholder="Tvoje meno">
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="tvoj@email.com">
+
+        <label for="tema">Téma</label>
+        <select id="tema">
+            <option value="">-- Vyber tému --</option>
+            <option>Odporúčanie filmu</option>
+            <option>Oprava chyby</option>
+            <option>Spolupráca</option>
+            <option>Iné</option>
+        </select>
+
+        <label for="sprava">Správa</label>
+        <textarea id="sprava" placeholder="Čo nám chceš povedať?"></textarea>
+
+        <br><br>
+        <button class="tlacidlo" onclick="alert('Správa odoslaná!')">Odoslať</button>
+    </div>
+
+</div>
+
+<footer>
+    <a href="../index.html">Domov</a>
+    <a href="galeria.html">Galéria</a>
+    <a href="kontakt.html">O nás</a>
+    <br><br>
+    © 2026 VOID — Sci-Fi Encyklopédia
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

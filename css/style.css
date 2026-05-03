@@ -1,0 +1,391 @@
+body {
+    background-color: #0a0a0a;
+    color: #cccccc;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #00ccff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+}
+
+nav {
+    background-color: #111111;
+    border-bottom: 2px solid #00ccff;
+    padding: 15px 30px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #cccccc;
+    font-size: 15px;
+}
+
+nav ul li a:hover {
+    color: #00ccff;
+    text-decoration: none;
+}
+
+nav ul li a.active {
+    color: #00ccff;
+    border-bottom: 1px solid #00ccff;
+    padding-bottom: 3px;
+}
+
+.logo {
+    font-size: 22px;
+    color: #ffffff;
+    font-weight: bold;
+    float: left;
+    margin-right: 40px;
+    line-height: 1;
+}
+
+.logo span {
+    color: #00ccff;
+}
+
+.obsah {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.hero {
+    background-color: #111111;
+    border: 1px solid #222222;
+    padding: 60px 40px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #00ccff;
+}
+
+.hero p {
+    color: #999999;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.tlacidlo {
+    background-color: #00ccff;
+    color: #000000;
+    padding: 10px 25px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+.tlacidlo:hover {
+    background-color: #ffffff;
+    text-decoration: none;
+    color: #000000;
+}
+
+.tlacidlo-obrys {
+    background-color: transparent;
+    color: #cccccc;
+    padding: 10px 25px;
+    border: 1px solid #444444;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+.tlacidlo-obrys:hover {
+    border-color: #00ccff;
+    color: #00ccff;
+    text-decoration: none;
+}
+
+.nadpis-sekcie {
+    color: #ffffff;
+    font-size: 26px;
+    border-left: 4px solid #00ccff;
+    padding-left: 15px;
+    margin-bottom: 25px;
+    margin-top: 40px;
+}
+
+.popis-sekcie {
+    color: #888888;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.karty {
+    overflow: hidden; /* clearfix pre float */
+}
+
+.karta {
+    background-color: #111111;
+    border: 1px solid #222222;
+    border-top: 3px solid #00ccff;
+    padding: 20px;
+    width: 28%;
+    float: left;
+    margin-right: 3%;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+}
+
+.karta:nth-child(3n) {
+    margin-right: 0;
+}
+
+.karta h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.karta .rok {
+    color: #00ccff;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.karta p {
+    color: #999999;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.karta a {
+    font-size: 13px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+table th {
+    background-color: #111111;
+    color: #00ccff;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #00ccff;
+}
+
+table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #222222;
+    color: #cccccc;
+    font-size: 14px;
+}
+
+table tr:hover td {
+    background-color: #111111;
+}
+
+.galeria {
+    overflow: hidden;
+}
+
+.galeria-obrazok {
+    width: 22%;
+    float: left;
+    margin-right: 3%;
+    margin-bottom: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.galeria-obrazok:nth-child(4n) {
+    margin-right: 0;
+}
+
+.galeria-obrazok img {
+    width: 100%;
+    border: 1px solid #222222;
+    display: block;
+}
+
+.galeria-obrazok img:hover {
+    border-color: #00ccff;
+    opacity: 0.8;
+}
+
+.galeria-obrazok p {
+    color: #888888;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.92);
+    text-align: center;
+    z-index: 1000;
+}
+
+#lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+    margin-top: 60px;
+    border: 1px solid #333333;
+}
+
+#lightbox p {
+    color: #aaaaaa;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+#lightbox-zatvorit {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #cccccc;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+#lightbox-zatvorit:hover {
+    color: #00ccff;
+}
+
+.formular label {
+    display: block;
+    color: #aaaaaa;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.formular input,
+.formular textarea,
+.formular select {
+    width: 100%;
+    background-color: #111111;
+    border: 1px solid #333333;
+    color: #cccccc;
+    padding: 10px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.formular input:focus,
+.formular textarea:focus {
+    border-color: #00ccff;
+    outline: none;
+}
+
+.formular textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.casova-os {
+    border-left: 2px solid #333333;
+    padding-left: 25px;
+    margin-left: 10px;
+}
+
+.casova-os-item {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.casova-os-item::before {
+    content: "■";
+    color: #00ccff;
+    position: absolute;
+    left: -32px;
+    font-size: 10px;
+    top: 3px;
+}
+
+.casova-os-item .rok {
+    color: #00ccff;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.casova-os-item h4 {
+    color: #ffffff;
+    margin: 0 0 5px 0;
+}
+
+.casova-os-item p {
+    color: #888888;
+    font-size: 14px;
+    margin: 0;
+}
+
+.info-box {
+    background-color: #111111;
+    border-left: 3px solid #00ccff;
+    padding: 15px 20px;
+    margin: 20px 0;
+    color: #999999;
+    font-size: 14px;
+}
+
+footer {
+    background-color: #111111;
+    border-top: 1px solid #222222;
+    padding: 25px 30px;
+    text-align: center;
+    color: #555555;
+    font-size: 13px;
+    margin-top: 60px;
+}
+
+footer a {
+    color: #555555;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #00ccff;
+    text-decoration: none;
+}

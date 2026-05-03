@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galéria — Sci-Fi Portal</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav>
+    <div class="logo"><span>[</span>VOID<span>]</span></div>
+    <ul>
+        <li><a href="../index.html">Domov</a></li>
+        <li><a href="filmy.html">Filmy</a></li>
+        <li><a href="serialy.html">Seriály</a></li>
+        <li><a href="galeria.html" class="active">Galéria</a></li>
+        <li><a href="rebricek.html">Rebríček</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+</nav>
+
+<div class="obsah">
+
+    <h1 class="nadpis-sekcie">Galéria</h1>
+    <p class="popis-sekcie">Klikni na obrázok pre zobrazenie na celú obrazovku. Zavri klávesom ESC alebo kliknutím mimo obrázka.</p>
+
+    <div class="galeria">
+
+        <div class="galeria-obrazok" onclick="otvorLightbox('../img/interstellar.svg', 'Interstellar (2014)')">
+            <img src="../img/interstellar.svg" alt="Interstellar">
+            <p>Interstellar</p>
+        </div>
+
+        <div class="galeria-obrazok" onclick="otvorLightbox('../img/blackmirror.svg', 'Black Mirror (2011)')">
+            <img src="../img/blackmirror.svg" alt="Black Mirror">
+            <p>Black Mirror</p>
+        </div>
+
+        <div class="galeria-obrazok" onclick="otvorLightbox('../img/arrival.svg', 'Arrival (2016)')">
+            <img src="../img/arrival.svg" alt="Arrival">
+            <p>Arrival</p>
+        </div>
+
+        <div class="galeria-obrazok" onclick="otvorLightbox('../img/dark.svg', 'Dark (2017)')">
+            <img src="../img/dark.svg" alt="Dark">
+            <p>Dark</p>
+        </div>
+
+        <div class="galeria-obrazok" onclick="otvorLightbox('../img/matrix.svg', 'The Matrix (1999)')">
+            <img src="../img/matrix.svg" alt="The Matrix">
+            <p>The Matrix</p>
+        </div>
+
+        <div class="galeria-obrazok" onclick="otvorLightbox('../img/bladerunner.svg', 'Blade Runner (1982)')">
+            <img src="../img/bladerunner.svg" alt="Blade Runner">
+            <p>Blade Runner</p>
+        </div>
+
+        <div class="galeria-obrazok" onclick="otvorLightbox('../img/expanse.svg', 'The Expanse (2015)')">
+            <img src="../img/expanse.svg" alt="The Expanse">
+            <p>The Expanse</p>
+        </div>
+
+        <div class="galeria-obrazok" onclick="otvorLightbox('../img/foundation.svg', 'Foundation (2021)')">
+            <img src="../img/foundation.svg" alt="Foundation">
+            <p>Foundation</p>
+        </div>
+
+    </div>
+
+    <div class="info-box">
+        Obrázky sú zatiaľ len zástupné (placeholder). Nahraď ich reálnymi plagatmi — vlož ich do priečinka <strong>img/</strong> s rovnakým názvom (napr. interstellar.jpg) a zmeň príponu v kóde.
+    </div>
+
+</div>
+
+<div id="lightbox" onclick="zatvorLightbox()">
+    <button id="lightbox-zatvorit" onclick="zatvorLightbox()">✕</button>
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-popis"></p>
+</div>
+
+<footer>
+    <a href="../index.html">Domov</a>
+    <a href="filmy.html">Filmy</a>
+    <a href="kontakt.html">O nás</a>
+    <br><br>
+    © 2026 VOID — Sci-Fi Encyklopédia
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
