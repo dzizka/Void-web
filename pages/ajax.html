@@ -26,20 +26,12 @@
     <h1 class="nadpis-sekcie">AJAX & JSON</h1>
     <p class="popis-sekcie">Dáta sú načítané asynchrónne zo súboru <strong>data.json</strong> pomocou AJAX technológie.</p>
 
-    <div class="info-box">
-        <strong>Ako to funguje:</strong> Klikni na tlačidlo. JavaScript pošle požiadavku na súbor data.json,
-        načíta dáta na pozadí (bez obnovenia stránky) a zobrazí ich v tabuľke nižšie.
-    </div>
-
-    <!-- Tlačidlo spustí načítanie -->
     <br>
     <button class="tlacidlo" onclick="nacitajData()">Načítať dáta zo JSON</button>
     <br><br>
 
-    <!-- Sem sa vypíše správa o stave načítavania -->
     <p id="stav" style="color:#888888; font-size:14px;"></p>
 
-    <!-- Sem sa vygeneruje tabuľka -->
     <div id="tabulka"></div>
 
 </div>
@@ -57,26 +49,20 @@
 <script>
     function nacitajData() {
 
-        // Zobrazíme správu že načítavame
         document.getElementById("stav").textContent = "Načítavam dáta...";
 
-        // Vytvoríme AJAX požiadavku
         var xhr = new XMLHttpRequest();
 
-        // Otvoríme súbor data.json (GET = čítame, true = asynchrónne)
         xhr.open("GET", "../data.json", true);
 
-        // Táto funkcia sa spustí keď príde odpoveď
         xhr.onload = function() {
 
             if (xhr.status === 200) {
-                // Načítanie prebehlo úspešne
-                // JSON.parse premení text na JavaScript objekt
+
                 var data = JSON.parse(xhr.responseText);
 
                 document.getElementById("stav").textContent = "Načítané " + data.length + " záznamov.";
 
-                // Zavoláme funkciu ktorá vykreslí tabuľku
                 vykreslTabulku(data);
 
             } else {
@@ -84,16 +70,13 @@
             }
         };
 
-        // Odošleme požiadavku
         xhr.send();
     }
 
     function vykreslTabulku(data) {
 
-        // Začneme skladať HTML tabuľky ako text
         var html = "<table>";
 
-        // Hlavička tabuľky
         html = html + "<thead><tr>";
         html = html + "<th>Názov</th>";
         html = html + "<th>Rok</th>";
@@ -104,13 +87,11 @@
         html = html + "<th>Rotten Tomatoes</th>";
         html = html + "</tr></thead>";
 
-        // Telo tabuľky - prechádzame každý záznam
         html = html + "<tbody>";
 
         for (var i = 0; i < data.length; i++) {
             var film = data[i];
 
-            // Žánre sú pole - spojíme ich čiarkou
             var zanre = film.info.zanre.join(", ");
 
             html = html + "<tr>";
@@ -126,7 +107,6 @@
 
         html = html + "</tbody></table>";
 
-        // Vložíme tabuľku do stránky
         document.getElementById("tabulka").innerHTML = html;
     }
 </script>
