@@ -319,6 +319,11 @@ table tr:hover td {
     outline: none;
 }
 
+.formular input[type="radio"],
+.formular input[type="checkbox"] {
+    width: auto;
+}
+
 .formular textarea {
     height: 120px;
     resize: vertical;
