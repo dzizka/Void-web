@@ -149,7 +149,7 @@ nav ul li a.active {
 }
 
 .karty {
-    overflow: hidden; /* clearfix pre float */
+    overflow: hidden;
 }
 
 .karta {

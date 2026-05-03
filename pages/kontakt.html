@@ -24,12 +24,21 @@
 
     <h2 class="nadpis-sekcie">Napíš nám</h2>
 
+    <div id="chyby" style="display:none; background-color:#1a0000; border-left:3px solid #ff3c5a; padding:15px 20px; margin-bottom:20px; color:#ff6666; font-size:14px;"></div>
+
+    <div id="uspech" style="display:none; background-color:#001a00; border-left:3px solid #00cc66; padding:15px 20px; margin-bottom:20px; color:#00cc66; font-size:14px;">
+        Správa bola úspešne odoslaná! Ozveme sa ti čoskoro.
+    </div>
+
     <div class="formular" style="max-width: 500px;">
         <label for="meno">Meno</label>
         <input type="text" id="meno" placeholder="Tvoje meno">
 
         <label for="email">E-mail</label>
         <input type="email" id="email" placeholder="tvoj@email.com">
+
+        <label for="vek">Vek</label>
+        <input type="number" id="vek" placeholder="18" min="10" max="99">
 
         <label for="tema">Téma</label>
         <select id="tema">
@@ -40,11 +49,31 @@
             <option>Iné</option>
         </select>
 
+        <label>Ako si nás našiel?</label>
+        <div style="margin-bottom:15px;">
+            <label style="display:inline; color:#cccccc; font-size:14px; margin-right:20px;">
+                <input type="radio" name="zdroj" value="google"> Google
+            </label>
+            <label style="display:inline; color:#cccccc; font-size:14px; margin-right:20px;">
+                <input type="radio" name="zdroj" value="kamarati"> Kamaráti
+            </label>
+            <label style="display:inline; color:#cccccc; font-size:14px;">
+                <input type="radio" name="zdroj" value="ine"> Iné
+            </label>
+        </div>
+
         <label for="sprava">Správa</label>
         <textarea id="sprava" placeholder="Čo nám chceš povedať?"></textarea>
 
-        <br><br>
-        <button class="tlacidlo" onclick="alert('Správa odoslaná!')">Odoslať</button>
+        <div style="margin-top:15px; margin-bottom:20px;">
+            <label style="display:inline; color:#cccccc; font-size:14px;">
+                <input type="checkbox" id="suhlas">
+                Súhlasím so spracovaním osobných údajov
+            </label>
+        </div>
+
+        <button class="tlacidlo" onclick="skontrolujFormular()">Odoslať</button>
+
     </div>
 
 </div>
