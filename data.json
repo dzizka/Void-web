@@ -1,0 +1,87 @@
+[
+    {
+        "nazov": "Interstellar",
+        "rok": 2014,
+        "typ": "film",
+        "info": {
+            "reziser": "Christopher Nolan",
+            "zanre": ["sci-fi", "drama", "dobrodružstvo"],
+            "hodnotenie": {
+                "imdb": 8.7,
+                "rt": 73,
+                "zdroje": {
+                    "imdb_url": "imdb.com/title/tt0816692",
+                    "rt_url": "rottentomatoes.com/m/interstellar"
+                }
+            }
+        }
+    },
+    {
+        "nazov": "Black Mirror",
+        "rok": 2011,
+        "typ": "serial",
+        "info": {
+            "reziser": "Charlie Brooker",
+            "zanre": ["sci-fi", "thriller", "dráma"],
+            "hodnotenie": {
+                "imdb": 8.8,
+                "rt": 83,
+                "zdroje": {
+                    "imdb_url": "imdb.com/title/tt2085059",
+                    "rt_url": "rottentomatoes.com/tv/black_mirror"
+                }
+            }
+        }
+    },
+    {
+        "nazov": "The Matrix",
+        "rok": 1999,
+        "typ": "film",
+        "info": {
+            "reziser": "Wachowski Sisters",
+            "zanre": ["sci-fi", "akcia"],
+            "hodnotenie": {
+                "imdb": 8.7,
+                "rt": 88,
+                "zdroje": {
+                    "imdb_url": "imdb.com/title/tt0133093",
+                    "rt_url": "rottentomatoes.com/m/matrix"
+                }
+            }
+        }
+    },
+    {
+        "nazov": "Dark",
+        "rok": 2017,
+        "typ": "serial",
+        "info": {
+            "reziser": "Baran bo Odar",
+            "zanre": ["sci-fi", "mysteriózny", "thriller"],
+            "hodnotenie": {
+                "imdb": 8.8,
+                "rt": 95,
+                "zdroje": {
+                    "imdb_url": "imdb.com/title/tt5753856",
+                    "rt_url": "rottentomatoes.com/tv/dark"
+                }
+            }
+        }
+    },
+    {
+        "nazov": "Arrival",
+        "rok": 2016,
+        "typ": "film",
+        "info": {
+            "reziser": "Denis Villeneuve",
+            "zanre": ["sci-fi", "dráma", "mysteriózny"],
+            "hodnotenie": {
+                "imdb": 7.9,
+                "rt": 94,
+                "zdroje": {
+                    "imdb_url": "imdb.com/title/tt2543164",
+                    "rt_url": "rottentomatoes.com/m/arrival_2016"
+                }
+            }
+        }
+    }
+]

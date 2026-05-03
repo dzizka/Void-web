@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Dáta — Sci-Fi Portal</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav>
+    <div class="logo"><span>[</span>VOID<span>]</span></div>
+    <ul>
+        <li><a href="../index.html">Domov</a></li>
+        <li><a href="filmy.html">Filmy</a></li>
+        <li><a href="serialy.html">Seriály</a></li>
+        <li><a href="galeria.html">Galéria</a></li>
+        <li><a href="rebricek.html">Rebríček</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="ajax.html" class="active">AJAX</a></li>
+    </ul>
+</nav>
+
+<div class="obsah">
+
+    <h1 class="nadpis-sekcie">AJAX & JSON</h1>
+    <p class="popis-sekcie">Dáta sú načítané asynchrónne zo súboru <strong>data.json</strong> pomocou AJAX technológie.</p>
+
+    <div class="info-box">
+        <strong>Ako to funguje:</strong> Klikni na tlačidlo. JavaScript pošle požiadavku na súbor data.json,
+        načíta dáta na pozadí (bez obnovenia stránky) a zobrazí ich v tabuľke nižšie.
+    </div>
+
+    <!-- Tlačidlo spustí načítanie -->
+    <br>
+    <button class="tlacidlo" onclick="nacitajData()">Načítať dáta zo JSON</button>
+    <br><br>
+
+    <!-- Sem sa vypíše správa o stave načítavania -->
+    <p id="stav" style="color:#888888; font-size:14px;"></p>
+
+    <!-- Sem sa vygeneruje tabuľka -->
+    <div id="tabulka"></div>
+
+</div>
+
+<footer>
+    <a href="../index.html">Domov</a>
+    <a href="galeria.html">Galéria</a>
+    <a href="kontakt.html">Kontakt</a>
+    <br><br>
+    © 2026 VOID — Sci-Fi Encyklopédia
+</footer>
+
+<script src="../js/main.js"></script>
+
+<script>
+    function nacitajData() {
+
+        // Zobrazíme správu že načítavame
+        document.getElementById("stav").textContent = "Načítavam dáta...";
+
+        // Vytvoríme AJAX požiadavku
+        var xhr = new XMLHttpRequest();
+
+        // Otvoríme súbor data.json (GET = čítame, true = asynchrónne)
+        xhr.open("GET", "../data.json", true);
+
+        // Táto funkcia sa spustí keď príde odpoveď
+        xhr.onload = function() {
+
+            if (xhr.status === 200) {
+                // Načítanie prebehlo úspešne
+                // JSON.parse premení text na JavaScript objekt
+                var data = JSON.parse(xhr.responseText);
+
+                document.getElementById("stav").textContent = "Načítané " + data.length + " záznamov.";
+
+                // Zavoláme funkciu ktorá vykreslí tabuľku
+                vykreslTabulku(data);
+
+            } else {
+                document.getElementById("stav").textContent = "Chyba pri načítaní súboru.";
+            }
+        };
+
+        // Odošleme požiadavku
+        xhr.send();
+    }
+
+    function vykreslTabulku(data) {
+
+        // Začneme skladať HTML tabuľky ako text
+        var html = "<table>";
+
+        // Hlavička tabuľky
+        html = html + "<thead><tr>";
+        html = html + "<th>Názov</th>";
+        html = html + "<th>Rok</th>";
+        html = html + "<th>Typ</th>";
+        html = html + "<th>Režisér</th>";
+        html = html + "<th>Žánre</th>";
+        html = html + "<th>IMDB</th>";
+        html = html + "<th>Rotten Tomatoes</th>";
+        html = html + "</tr></thead>";
+
+        // Telo tabuľky - prechádzame každý záznam
+        html = html + "<tbody>";
+
+        for (var i = 0; i < data.length; i++) {
+            var film = data[i];
+
+            // Žánre sú pole - spojíme ich čiarkou
+            var zanre = film.info.zanre.join(", ");
+
+            html = html + "<tr>";
+            html = html + "<td>" + film.nazov + "</td>";
+            html = html + "<td>" + film.rok + "</td>";
+            html = html + "<td>" + film.typ + "</td>";
+            html = html + "<td>" + film.info.reziser + "</td>";      // úroveň 2
+            html = html + "<td>" + zanre + "</td>";                   // úroveň 2
+            html = html + "<td>" + film.info.hodnotenie.imdb + "</td>"; // úroveň 3
+            html = html + "<td>" + film.info.hodnotenie.rt + "%</td>";  // úroveň 3
+            html = html + "</tr>";
+        }
+
+        html = html + "</tbody></table>";
+
+        // Vložíme tabuľku do stránky
+        document.getElementById("tabulka").innerHTML = html;
+    }
+</script>
+
+</body>
+</html>
